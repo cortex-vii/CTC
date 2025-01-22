@@ -1,0 +1,19 @@
+{% extends 'admin/base_site.html' %}
+
+{% block content %}
+  <h1>Relatório do Serviço - {{ service.client }}</h1>
+
+  <!-- Include informações do serviço -->
+  {% include 'partials/service_info.html' %}
+
+  <!-- Include gráficos -->
+  {% include 'partials/charts.html' %}
+
+  <!-- Tabela de Entradas -->
+  {% include 'partials/entries_table.html' %}
+
+  <!-- Tabela de Saídas -->
+  {% include 'partials/exits_table.html' %}
+  
+
+{% endblock %}

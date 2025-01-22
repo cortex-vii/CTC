@@ -1,0 +1,31 @@
+<h3>Saídas</h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Máquina</th>
+      <th>Operador</th>
+      <th>Quantidade</th>
+      <th>Valor Unitário</th>
+      <th>Valor Total</th>
+      <th>Descrição</th>
+      <th>Data de Saída</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for exit in exits %}
+    <tr>
+      <td>{{ exit.machine }}</td>
+      <td>{{ exit.operator }}</td>
+      <td>{{ exit.quantity }}</td>
+      <td>{{ exit.price }}</td>
+      <td>{{ exit.total_value }}</td>
+      <td>{{ exit.description }}</td>
+      <td>{{ exit.exit_date }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="7" class="text-center">Nenhuma saída registrada</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
