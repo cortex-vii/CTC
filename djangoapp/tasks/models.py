@@ -31,7 +31,7 @@ class Tasks(models.Model):
                 self.hours_worked = total_hours  # Representa as horas reais
             else:
                 raise ValueError("O valor de 'horimeter_end' deve ser maior ou igual ao de 'horimeter_start'.")
-
+ 
         # Calcula o valor total
         if self.hours_worked is not None and self.hourly_rate is not None:
             self.total_value = self.hours_worked * self.hourly_rate
