@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from corsheaders.defaults import default_headers
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,6 +20,18 @@ ALLOWED_HOSTS = [
 CORS_ALLOWED_ORIGINS = [
     h.strip() for h in os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')
     if h.strip()
+]
+
+CSRF_TRUSTED_ORIGINS = [
+       h.strip() for h in os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',')
+    if h.strip()
+]
+
+# Adicionando cabeçalhos adicionais, se necessário
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'Access-Control-Allow-Origin',
+    'Access-Control-Allow-Headers',
+    
 ]
 
 """ Permite todas as origens """
